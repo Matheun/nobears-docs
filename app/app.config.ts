@@ -29,9 +29,13 @@ export default defineAppConfig({
     search: true,
     colorMode: true,
     links: [{
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt-ui-pro/docs/tree/v3',
-      'target': '_blank',
+      icon: 'i-simple-icons-github',
+      to: 'https://github.com/nuxt-ui-pro/docs/tree/v3',
+      target: '_blank',
+      'aria-label': 'GitHub'
+    }, {
+      to: 'https://github.com/nuxt-ui-pro/docs/tree/v3',
+      target: '_blank',
       'aria-label': 'GitHub'
     }]
   },

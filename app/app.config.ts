@@ -14,13 +14,13 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt UI Pro - Docs template'
+    siteName: 'NOBEARS - Docs'
   },
   header: {
     title: '',
     to: '/',
     logo: {
-      alt: '',
+      alt: 'NOBEARS Documentation',
       light: '/NOBEARS_Logo_MEDIUM.svg',
       dark: '/NOBEARS_Logo_SMALL_licht.svg'
     },

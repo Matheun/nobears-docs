@@ -3,7 +3,9 @@ export default defineAppConfig({
     colors: {
       primary: 'green',
       neutral: 'slate'
-    }
+    },
+
+    neutral: 'stone'
   },
   uiPro: {
     footer: {

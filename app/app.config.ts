@@ -21,8 +21,8 @@ export default defineAppConfig({
     to: '/',
     logo: {
       alt: '',
-      light: '',
-      dark: ''
+      light: '/NOBEARS_Logo_MEDIUM.svg',
+      dark: '/NOBEARS_Logo_SMALL_licht.svg'
     },
     search: true,
     colorMode: true,

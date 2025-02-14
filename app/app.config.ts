@@ -35,7 +35,7 @@ export default defineAppConfig({
                 children: [
                     {
                         label: "UI",
-                        icon: "i-ph:cube",
+                        icon: "i-ph:paint-brush-broad",
                         to: "/layers/ui",
                     },
                 ],

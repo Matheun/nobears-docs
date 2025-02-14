@@ -1,80 +1,86 @@
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
+import type { ContentNavigationItem } from "@nuxt/content";
 
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+const navigation = inject<Ref<ContentNavigationItem[]>>("navigation");
+const route = useRoute();
+const { header } = useAppConfig();
 
-const { header } = useAppConfig()
+const headerLinks = computed(() => {
+    const currentCollection = route.params.slug?.[0];
+    const links = header?.links;
+    links?.forEach((link) => {
+        if (link.to.includes(currentCollection) && link.to !== route.path) {
+            link.active = true;
+        }
+        else {
+            link.active = false;
+        }
+    });
+    return links;
+});
 </script>
 
 <template>
-  <UHeader
-    :ui="{ center: 'flex-1' }"
-    :to="header?.to || '/'"
-  >
-    <UContentSearchButton
-      v-if="header?.search"
-      label="Search..."
-      variant="outline"
-      class="w-full"
+    <UHeader
+        :to="header?.to || '/'"
+        :ui="{ center: 'flex-1' }"
     >
-      <template #trailing>
-        <div class="flex items-center gap-0.5 ms-auto">
-          <UKbd value="meta" />
-          <UKbd value="k" />
+        <template
+            v-if="header?.logo?.dark || header?.logo?.light || header?.title"
+            #title
+        >
+            <UColorModeImage
+                v-if="header?.logo?.dark || header?.logo?.light"
+                :alt="header?.logo?.alt"
+                :dark="header?.logo?.dark!"
+                :light="header?.logo?.light!"
+                class="h-6 w-auto shrink-0"
+            />
+
+            <span v-else-if="header?.title">
+                {{ header.title }}
+            </span>
+        </template>
+
+        <template
+            v-else
+            #left
+        >
+            <NuxtLink :to="header?.to || '/'">
+                <LogoPro class="w-auto h-6 shrink-0" />
+            </NuxtLink>
+
+            <TemplateMenu />
+        </template>
+
+        <div>
+            <UNavigationMenu
+                :items="headerLinks"
+                class="w-full justify-center"
+                content-orientation="vertical"
+                arrow
+            />
         </div>
-      </template>
-    </UContentSearchButton>
 
-    <template
-      v-if="header?.logo?.dark || header?.logo?.light || header?.title"
-      #title
-    >
-      <UColorModeImage
-        v-if="header?.logo?.dark || header?.logo?.light"
-        :light="header?.logo?.light!"
-        :dark="header?.logo?.dark!"
-        :alt="header?.logo?.alt"
-        class="h-6 w-auto shrink-0"
-      />
+        <template #right>
+            <UContentSearchButton v-if="header?.search" />
 
-      <span v-else-if="header?.title">
-        {{ header.title }}
-      </span>
-    </template>
+            <UColorModeButton v-if="header?.colorMode" />
 
-    <template
-      v-else
-      #left
-    >
-      <NuxtLink :to="header?.to || '/'">
-        <LogoPro class="w-auto h-6 shrink-0" />
-      </NuxtLink>
+            <template v-if="header?.icons">
+                <UButton
+                    v-for="(icon, index) of header.icons"
+                    :key="index"
+                    v-bind="{ color: 'neutral', variant: 'ghost', ...icon }"
+                />
+            </template>
+        </template>
 
-      <TemplateMenu />
-    </template>
-
-    <template #right>
-      <UContentSearchButton
-        v-if="header?.search"
-        class="lg:hidden"
-      />
-
-      <UColorModeButton v-if="header?.colorMode" />
-
-      <template v-if="header?.links">
-        <UButton
-          v-for="(link, index) of header.links"
-          :key="index"
-          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
-        />
-      </template>
-    </template>
-
-    <template #content>
-      <UContentNavigation
-        highlight
-        :navigation="navigation"
-      />
-    </template>
-  </UHeader>
+        <template #content>
+            <UContentNavigation
+                :navigation="navigation"
+                highlight
+            />
+        </template>
+    </UHeader>
 </template>

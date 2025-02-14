@@ -32,8 +32,18 @@ export default defineNuxtConfig({
     },
 
     icon: {
-        serverBundle: {
-            collections: ['ph', 'simple-icons'] // <!--- this
+        clientBundle: {
+        // list of icons to include in the client bundle
+        icons: [],
+
+        // scan all components in the project and include icons 
+        scan: true,
+
+        // include all custom collections in the client bundle
+        includeCustomCollections: true, 
+
+        // guard for uncompressed bundle size, will fail the build if exceeds
+        sizeLimitKb: 256,
         }
     },
 

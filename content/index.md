@@ -1,6 +1,7 @@
 ---
 title: NOBEARS Frontend internal tooling documentation
-description: The NOBEARS internal tooling is a collection of tools that help us build and maintain our applications.
+description: The NOBEARS internal tooling is a collection of tools that help us
+  build and maintain our applications.
 seo:
   title: Nuxt UI Pro - Docs template.
   description: Nuxt UI Pro is a collection of premium Vue components built on top
@@ -8,37 +9,37 @@ seo:
 ---
 
 ::u-page-hero
----
-
----
-  ::u-page-grid
-    :::u-page-card
+  :::u-page-grid
+    ::::u-page-card
     ---
+    description: The Layers tool is a collection of tools that help us build and
+      maintain our applications.
     icon: i-ph:stack
-    to: /layers
     title: Layers
-    description: The Layers tool is a collection of tools that help us build and maintain our applications.
+    to: /layers
     ---
-    :::
-
-    :::u-page-card
+    ::::
+  
+    ::::u-page-card
     ---
+    description: The Modules tool is a collection of tools that help us build and
+      maintain our applications.
     icon: i-ph:puzzle-piece
-    to: /modules
     title: Modules
-    description: The Modules tool is a collection of tools that help us build and maintain our applications.
+    to: /modules
     ---
-    :::
-
-    :::u-page-card
+    ::::
+  
+    ::::u-page-card
     ---
+    description: The Templates tool is a collection of tools that help us build and
+      maintain our applications.
     icon: i-ph:browsers
-    to: /templates
     title: Templates
-    description: The Templates tool is a collection of tools that help us build and maintain our applications.
+    to: /templates
     ---
-    :::
-  ::
+    ::::
+  :::
 
 #title
 NOBEARS Frontend internal tooling
@@ -46,7 +47,6 @@ NOBEARS Frontend internal tooling
 #description
 The NOBEARS Frontend internal tooling is a collection of tools that help us build and maintain our applications.
 ::
-
 
 <!-- :::u-page-card
 ---

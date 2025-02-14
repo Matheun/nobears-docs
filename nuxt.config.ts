@@ -31,6 +31,12 @@ export default defineNuxtConfig({
         },
     },
 
+    icon: {
+        serverBundle: {
+            collections: ['ph', 'simple-icons'] // <!--- this
+        }
+    },
+
     eslint: {
         config: {
             stylistic: {

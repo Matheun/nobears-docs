@@ -25,7 +25,9 @@ export default defineNuxtConfig({
             routes: [
                 "/",
             ],
+            failOnError: false,
             crawlLinks: true,
+            concurrency: 12,
         },
     },
 

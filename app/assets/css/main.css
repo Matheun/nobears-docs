@@ -31,7 +31,6 @@
 }
 
 @layer base {
-
   .light,
   :root {
     --ui-text-dimmed:var(--ui-color-neutral-400);
@@ -51,6 +50,7 @@
     --ui-radius:var(--radius-sm);
     --ui-container:var(--container-7xl)
   }
+
   .dark {
     --ui-text-dimmed:var(--ui-color-neutral-500);
     --ui-text-muted:var(--ui-color-neutral-400);
@@ -66,13 +66,11 @@
     --ui-border-accented:var(--ui-color-neutral-700);
     --ui-border-inverted:var(--color-white)
   }
+
   :root {
     --ui-header-height:calc(var(--spacing)*16)
   }
-}
-
-@layer base {
-    :root {
+  :root {
     --ui-color-primary-50: var(--color-green-50);
     --ui-color-primary-100: var(--color-green-100);
     --ui-color-primary-200: var(--color-green-200);

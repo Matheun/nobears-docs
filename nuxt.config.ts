@@ -34,16 +34,28 @@ export default defineNuxtConfig({
     icon: {
         clientBundle: {
         // list of icons to include in the client bundle
-        icons: [],
+            icons: [
+                'i-ph:paint-brush-broad',
+                'i-ph:stack',
+                'i-ph:info',
+                'i-ph:download',
+                'i-ph:gear',
+                'i-ph:handshake',
+                'i-ph:puzzle-piece',
+                'i-ph:browsers',
+                'i-ph:cube',
+                'i-simple-icons:nuxt',
+                'i-simple-icons:statamic',
+            ],
 
-        // scan all components in the project and include icons 
-        scan: true,
+            // scan all components in the project and include icons 
+            scan: true,
 
-        // include all custom collections in the client bundle
-        includeCustomCollections: true, 
+            // include all custom collections in the client bundle
+            includeCustomCollections: true, 
 
-        // guard for uncompressed bundle size, will fail the build if exceeds
-        sizeLimitKb: 256,
+            // guard for uncompressed bundle size, will fail the build if exceeds
+            sizeLimitKb: 256,
         }
     },
 

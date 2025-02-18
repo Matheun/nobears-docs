@@ -31,6 +31,12 @@ export default defineNuxtConfig({
         },
     },
 
+    routeRules: {
+        '/layers/ui': { redirect: '/layers/ui/getting-started', prerender: false },
+        '/modules/gtm': { redirect: '/modules/gtm/getting-started', prerender: false },
+        '/modules/statamic': { redirect: '/modules/statamic/getting-started', prerender: false },
+    },
+
     icon: {
         clientBundle: {
         // list of icons to include in the client bundle

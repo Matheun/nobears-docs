@@ -48,7 +48,12 @@ export default defineAppConfig({
                     {
                         label: "Statamic",
                         icon: "i-simple-icons:statamic",
-                        to: "/modules/statamic",
+                        to: "/modules/statamic/getting-started",
+                    },
+                    {
+                        label: "Google Tag Manager",
+                        icon: "i-simple-icons:googletagmanager",
+                        to: "/modules/gtm/getting-started",
                     },
                 ],
             },
@@ -68,15 +73,20 @@ export default defineAppConfig({
                         to: "/templates/nuxt-basic",
                     },
                     {
-                        label: "Nuxt Multi-Site",
-                        icon: "i-ph:users",
-                        to: "/templates/nuxt-multi-site",
+                        label: "Nuxt Module Starter",
+                        icon: "i-ph:puzzle-piece",
+                        to: "/templates/nuxt-module-starter",
                     },
-                    {
-                        label: "Nuxt Multi-Site/ Domain",
-                        icon: "i-ph:translate",
-                        to: "/templates/nuxt-multi-domain-&-site",
-                    },
+                    // {
+                    //     label: "Nuxt Multi-Site",
+                    //     icon: "i-ph:users",
+                    //     to: "/templates/nuxt-multi-site",
+                    // },
+                    // {
+                    //     label: "Nuxt Multi-Site/ Domain",
+                    //     icon: "i-ph:translate",
+                    //     to: "/templates/nuxt-multi-domain-&-site",
+                    // },
                 ],
             },
         ],

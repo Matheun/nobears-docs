@@ -3,9 +3,8 @@ title: NOBEARS Frontend internal tooling documentation
 description: The NOBEARS internal tooling is a collection of tools that help us
   build and maintain our applications.
 seo:
-  title: Nuxt UI Pro - Docs template.
-  description: Nuxt UI Pro is a collection of premium Vue components built on top
-    of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+  title: NOBEARS Frontend - Docs.
+  description: The NOBEARS Frontend is a collection of tools that help us build and maintain our applications.
 ---
 
 ::u-page-hero

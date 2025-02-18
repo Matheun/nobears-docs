@@ -49,9 +49,14 @@ export default defineNuxtConfig({
                 'i-ph:handshake',
                 'i-ph:puzzle-piece',
                 'i-ph:browsers',
+                'i-ph:browser',
                 'i-ph:cube',
                 'i-simple-icons:nuxt',
                 'i-simple-icons:statamic',
+                'i-simple-icons:googletagmanager',
+                'i-simple-icons:github',
+                'i-lucide:moon',
+
             ],
 
             // scan all components in the project and include icons 

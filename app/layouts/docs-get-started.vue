@@ -18,13 +18,14 @@ const currentCollectionData = computed(() => {
 });
 
 const pageAnchors = computed(() => {
-    const childSlug = route.params.slug?.[1];
+    const childSlug = route.params.slug?.[0];
+    
     if (isCollection.value) {
         return currentCollectionData?.value?.children?.map(child => ({
             label: child.title,
             icon: child.icon,
             to: child.path,
-            active: childSlug && child.path.includes(childSlug),
+            active: childSlug && child.path.includes('get-started'),
         }));
     }
 
@@ -32,14 +33,16 @@ const pageAnchors = computed(() => {
         label: child.title,
         icon: child.icon,
         to: child.path,
-        active: childSlug && child.path.includes(childSlug),
+        active: childSlug && child.path.includes('get-started'),
     }));
 });
 
 const contentNavigation = computed(() => {
     if (!isCollection.value) {
-        return navigation?.value;
+        return navigation?.value?.filter(nav => nav.stem?.startsWith("0.get-started"))[0]?.children;
     }
+
+    
 
     const collectionChildren = currentCollectionData?.value?.children?.filter((child: any) => child.path !== `/${collectionType.value}`);
 

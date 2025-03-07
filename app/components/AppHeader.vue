@@ -6,10 +6,14 @@ const route = useRoute();
 const { header } = useAppConfig();
 
 const headerLinks = computed(() => {
+    const firstRoutePart = route.fullPath.split('/')[1];
     const currentCollection = route.params.slug?.[0];
     const links = header?.links;
     links?.forEach((link) => {
-        if (link.to.includes(currentCollection) && link.to !== route.path) {
+        if (firstRoutePart === link.to.split('/')[1]) {
+            link.active = true;
+        }
+        else if (link.to.includes(currentCollection) && link.to !== route.path) {
             link.active = true;
         }
         else {

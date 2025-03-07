@@ -3,7 +3,7 @@ import type { ContentNavigationItem } from "@nuxt/content";
 import { findPageBreadcrumb, findPageHeadline, mapContentNavigation } from "#ui-pro/utils/content";
 
 definePageMeta({
-    layout: "docs",
+    layout: "docs-get-started",
 });
 
 const route = useRoute();
@@ -26,18 +26,23 @@ const page = computed(() => data.value?.page);
 const surround = computed(() => data.value?.surround);
 
 useSeoMeta({
-    title: page.value?.seo.title,
-    ogTitle: `${page.value?.seo.title} - ${seo?.siteName}`,
-    description: page.value?.seo.description,
-    ogDescription: page.value?.seo.description,
+    title: page.value.seo.title,
+    ogTitle: `${page.value.seo.title} - ${seo?.siteName}`,
+    description: page.value.seo.description,
+    ogDescription: page.value.seo.description,
 });
 
 defineOgImageComponent("Docs");
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value));
+const headline = computed(() => findPageHeadline(navigation.value, page.value));
+
+// const breadcrumb = computed(() => findPageBreadcrumb(navigation.value, page.value).map(link => ({
+//     label: link.title,
+//     to: link.path,
+// })));
 
 const breadcrumb = computed(() => {
-    const links = mapContentNavigation(findPageBreadcrumb(navigation?.value, page.value)).map(link => ({
+    const links = mapContentNavigation(findPageBreadcrumb(navigation.value, page.value)).map(link => ({
         label: link.label,
         to: link.to,
     }));

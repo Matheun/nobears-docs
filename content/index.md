@@ -8,6 +8,18 @@ seo:
 ---
 
 ::u-page-hero
+---
+links:
+  - title: Get Started
+    label: Get Started
+    to: /get-started
+    icon: i-ph:rocket-launch
+  - title: Gitlab front-end repository group
+    label: Git Repository
+    to: https://git.nobears.nl/nobears-front-end
+    icon: i-ph:gitlab-logo
+    variant: subtle
+---
   :::u-page-grid
     ::::u-page-card
     ---

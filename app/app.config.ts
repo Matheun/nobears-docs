@@ -13,6 +13,11 @@ export default defineAppConfig({
                 left: "text-sm text-(--ui-text-muted)",
             },
         },
+        prose: {
+            fieldGroup: {
+                base: 'my-5 divide-y divide-(--ui-border) *:not-last:pb-5'
+            }
+        }
     },
     seo: {
         siteName: "NOBEARS Frontend - Docs",
@@ -28,6 +33,11 @@ export default defineAppConfig({
         search: true,
         colorMode: true,
         links: [
+            {
+                label: "Get Started",
+                icon: "i-ph:rocket-launch",
+                to: "/get-started",
+            },
             {
                 label: "Layers",
                 icon: "i-ph:stack",
